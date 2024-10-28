@@ -1,8 +1,7 @@
 class email {
     constructor(prefix, domain){
         this.prefix = prefix;
-        this.domain = domain;
-      
+        this.domain = domain;      
     }
 
     toString() {
@@ -20,7 +19,7 @@ export {
     email
 }
 
-// Exemplo de uso
+// Exemplo de uso:
 // const email = new Email('exemplo', 'dominio.com');
 // console.log(email.toString()); // Saída: exemplo@dominio.com
 
