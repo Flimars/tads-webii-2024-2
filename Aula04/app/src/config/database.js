@@ -23,6 +23,28 @@ db.exec(`
     )
 `);
 
+// Cria a tabela de telefones
+db.prepare(`
+  CREATE TABLE IF NOT EXISTS phones (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    phone TEXT NOT NULL,
+    is_primary INTEGER DEFAULT 0,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+  )
+`).run();
+
+// Cria a tabela de emails
+db.prepare(`
+  CREATE TABLE IF NOT EXISTS emails (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    email TEXT NOT NULL,
+    is_primary INTEGER DEFAULT 0,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+  )
+`).run();
+
 export {
     db
 }
